@@ -32,3 +32,6 @@ Write your biography here. Tell the world about yourself. Link to your favorite 
 Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
 
 Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+
+I am an Economist specialising on Behavioural and Experimental Economics. I am an incoming Assistant Professor in the Department of Economics at the University of Crete, and an outgoing postdoctoral researcher at the Economics and Policy Department of the Technical University of Munich, School of Management. I obtained my PhD in 2019 from the University of Nottingham. I am also an external fellow of the Centre for Decision Research and Experimental Economics ([**CeDEx**](https://orsee.nottingham.ac.uk/public/)). Prior to joining TUM I was a research fellow in the Network for Integrated Behavioural Sciences ([**NIBS**](http://www.behavioural-science.ac.uk/)).
+
