@@ -13,7 +13,7 @@ profile:
     <p>University of Crete</p>
     <p>Rethymno, Crete, Greece</p>
 
-selected_papers: true
+selected_papers: false
 social: true
 
 announcements:
