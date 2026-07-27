@@ -31,6 +31,15 @@
     text-align: right;
   }
 
+  h3.bibliography-subheading {
+    color: var(--global-text-color-light);
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
   ol.bibliography {
     list-style: none;
     padding: 0;
@@ -84,6 +93,7 @@
         > em {
           border-bottom: 1px solid;
           font-style: normal;
+          font-weight: bold;
         }
 
         > span.more-authors {

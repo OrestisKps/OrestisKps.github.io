@@ -15,6 +15,18 @@ nav_order: 2
 
 <div class="publications">
 
-{% bibliography %}
+<h2 class="bibliography">Refereed Research Articles</h2>
+{% bibliography --group_by none --query @*[keywords=refereed]* %}
+
+<h2 class="bibliography">Consortium Co-Authorship</h2>
+{% bibliography --group_by none --query @*[keywords=consortium]* %}
+
+<h2 class="bibliography">Work in Progress</h2>
+
+<h3 class="bibliography-subheading">Papers in Submission / Under Review</h3>
+{% bibliography --group_by none --query @*[keywords=submission]* %}
+
+<h3 class="bibliography-subheading">Papers in Preparation</h3>
+{% bibliography --group_by none --query @*[keywords=preparation]* %}
 
 </div>
