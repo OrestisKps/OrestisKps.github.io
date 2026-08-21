@@ -123,12 +123,7 @@ $rail-breakpoint: 768px;
   }
 }
 
-.rail-address {
-  margin-top: 10px; /* sits directly under the affiliation */
-  font-size: 12px;
-  line-height: 1.6;
-  color: var(--global-text-color-light);
-}
+/* Address is part of .rail-affiliation now; no separate block. */
 
 /* ---------- Right content column ---------- */
 
@@ -157,6 +152,8 @@ $rail-breakpoint: 768px;
   font-size: 15px;
   line-height: 1.75;
   color: var(--global-text-color-light);
+  text-align: justify;
+  hyphens: auto; /* keeps justified lines from opening up on narrow columns */
 }
 
 .rail-content p.rail-lead {

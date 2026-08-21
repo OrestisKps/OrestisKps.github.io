@@ -34,11 +34,16 @@ layout: default
           {{ site.title }}
         {%- endif -%}
       </h1>
-      {% if page.affiliation %}
-        <p class="rail-affiliation">{{ page.affiliation }}</p>
-      {% endif %}
-      {% if page.profile.address %}
-        <div class="rail-address">{{ page.profile.address }}</div>
+      {% comment %}
+        Affiliation and address render as a single block so they read as one
+        segment rather than two, and share one type size.
+      {% endcomment %}
+      {% if page.affiliation or page.profile.address %}
+        <p class="rail-affiliation">
+          {{- page.affiliation -}}
+          {%- if page.affiliation and page.profile.address %}<br>{% endif -%}
+          {{- page.profile.address -}}
+        </p>
       {% endif %}
     </div>
 
