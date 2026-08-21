@@ -1,0 +1,212 @@
+/*******************************************************************************
+ * Homepage identity rail (design direction 1c)
+ *
+ * Two-column homepage: a fixed identity rail on the left, a numbered content
+ * column on the right. Used only by _layouts/about-rail.liquid.
+ *
+ * Every colour comes from a --global-* custom property so the light/dark
+ * toggle keeps working. Do not introduce colour literals here.
+ ******************************************************************************/
+
+@use "variables" as v;
+
+$rail-width: 340px;
+$rail-breakpoint: 768px;
+
+.rail-page {
+  display: grid;
+  grid-template-columns: $rail-width 1fr;
+  align-items: start;
+  border: 1px solid var(--global-divider-color);
+
+  @media (max-width: $rail-breakpoint) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Left rail ---------- */
+
+.rail {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-self: stretch;
+  padding: 56px 40px;
+  background: var(--global-rail-bg-color);
+  border-right: 1px solid var(--global-divider-color);
+
+  @media (max-width: $rail-breakpoint) {
+    padding: 40px 24px;
+    border-right: none;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+
+  /* figure.liquid wraps the photo in <figure><picture>; strip the defaults. */
+  figure,
+  picture {
+    display: block;
+    margin: 0;
+  }
+}
+
+.rail-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0; /* square by design; overrides al-folio .rounded */
+  box-shadow: none; /* overrides al-folio z-depth-1 */
+
+  @media (max-width: $rail-breakpoint) {
+    max-width: 200px;
+  }
+}
+
+.rail-identity {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rail-name {
+  margin: 0;
+  font-family: v.$font-serif;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: var(--global-text-color);
+}
+
+.rail-affiliation {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--global-text-color-light);
+}
+
+.rail-rule {
+  width: 100%;
+  height: 1px;
+  margin: 0;
+  border: 0;
+  opacity: 1; /* Bootstrap dims <hr> by default */
+  background: var(--global-divider-color);
+}
+
+.rail-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  font-size: 14px;
+
+  a {
+    color: var(--global-text-color);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--global-theme-color);
+      text-decoration: none;
+    }
+  }
+}
+
+.rail-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  overflow-wrap: anywhere; /* long email / ORCID must not overflow the rail */
+
+  a {
+    color: var(--global-theme-color);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.rail-address {
+  margin-top: auto; /* pinned to the bottom of the rail */
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--global-text-color-light);
+
+  @media (max-width: $rail-breakpoint) {
+    margin-top: 0;
+  }
+}
+
+/* ---------- Right content column ---------- */
+
+.rail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  min-width: 0; /* let grid children shrink instead of overflowing */
+  padding: 56px 56px 64px;
+
+  @media (max-width: $rail-breakpoint) {
+    gap: 36px;
+    padding: 40px 24px 48px;
+  }
+}
+
+.rail-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rail-eyebrow {
+  font-family: v.$font-mono;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--global-text-color-light);
+}
+
+.rail-content p {
+  max-width: 64ch;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--global-text-color-light);
+}
+
+.rail-content p.rail-lead {
+  max-width: none;
+  font-family: v.$font-serif;
+  font-size: 26px;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: var(--global-text-color);
+}
+
+.rail-more {
+  align-self: flex-end;
+  font-size: 14px;
+  color: var(--global-theme-color);
+}
+
+/*
+ * Publications reuse _publications.scss wholesale so the homepage list and
+ * /publications/ stay visually identical. Only spacing is adjusted here.
+ */
+.rail-content .rail-publications {
+  ol.bibliography {
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-bottom: 24px;
+    }
+  }
+
+  h2.bibliography {
+    margin-top: 0;
+  }
+}
