@@ -209,4 +209,25 @@ $rail-breakpoint: 768px;
   h2.bibliography {
     margin-top: 0;
   }
+
+  /*
+   * Hide the journal cover thumbnails on the homepage only.
+   *
+   * bib.liquid puts them in a .col-sm-2, which is ~150px wide on
+   * /publications/ but only ~74px inside this narrower rail column -- too
+   * small to read a cover with text on it. The design spec for section 02
+   * lists no thumbnail either. /publications/ is untouched and keeps them.
+   *
+   * That column holds only the preview here: no entry in papers.bib sets
+   * `abbr`, so no venue badge is lost by hiding it. If abbr fields are ever
+   * added, hide `.preview` alone instead of the whole column.
+   */
+  ol.bibliography li .col-sm-2.abbr {
+    display: none;
+  }
+
+  ol.bibliography li .col-sm-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
