@@ -13,9 +13,6 @@ assets/rendercv/rendercv_output/*.typ
 Gemfile.lock
 node_modules/
 vendor
-# Local design handoff material (not part of the published site)
-Website design improvement/
-Website design improvement.zip
 
 # Local-only Jekyll config for previewing without the jupyter CLI
 _config_local.yml
