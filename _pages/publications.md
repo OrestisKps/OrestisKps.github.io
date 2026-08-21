@@ -9,10 +9,6 @@ nav_order: 2
 
 <!-- _pages/publications.md -->
 
-<!-- Bibsearch Feature -->
-
-{% include bib_search.liquid %}
-
 <div class="publications">
 
 <h2 class="bibliography">Refereed Research Articles</h2>

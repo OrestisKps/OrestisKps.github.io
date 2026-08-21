@@ -37,6 +37,9 @@ layout: default
       {% if page.affiliation %}
         <p class="rail-affiliation">{{ page.affiliation }}</p>
       {% endif %}
+      {% if page.profile.address %}
+        <div class="rail-address">{{ page.profile.address }}</div>
+      {% endif %}
     </div>
 
     <hr class="rail-rule">
@@ -91,9 +94,6 @@ layout: default
       </div>
     {% endif %}
 
-    {% if page.profile.address %}
-      <div class="rail-address">{{ page.profile.address }}</div>
-    {% endif %}
   </aside>
 
   <main class="rail-content">

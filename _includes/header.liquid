@@ -110,14 +110,13 @@
                     {%- assign url = p.url -%}
                   {%- endif %}
                   {%- comment -%}
-                    Nav sections open in a new tab, by request. cv_pdf already
-                    did; this extends it to the rest.
+                    Nav sections stay in the same tab. Only pages that opt in
+                    with `nav_new_tab: true` (the CV) open a new one.
                   {%- endcomment -%}
                   <a
                     class="nav-link"
                     href="{{ url | relative_url }}"
-                    target="_blank"
-                    rel="noopener"
+                    {% if p.nav_new_tab %}target="_blank" rel="noopener"{% endif %}
                   >
                     {{- p.title }}
                     {% if page.url contains p.url %}

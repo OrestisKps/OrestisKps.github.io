@@ -4,6 +4,7 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 3
+nav_new_tab: true
 ---
 
 <a href="{{ '/assets/pdf/cv.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Download as PDF</a>

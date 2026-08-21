@@ -124,14 +124,10 @@ $rail-breakpoint: 768px;
 }
 
 .rail-address {
-  margin-top: auto; /* pinned to the bottom of the rail */
+  margin-top: 10px; /* sits directly under the affiliation */
   font-size: 12px;
   line-height: 1.6;
   color: var(--global-text-color-light);
-
-  @media (max-width: $rail-breakpoint) {
-    margin-top: 0;
-  }
 }
 
 /* ---------- Right content column ---------- */
