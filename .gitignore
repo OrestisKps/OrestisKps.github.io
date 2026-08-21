@@ -19,3 +19,6 @@ Website design improvement.zip
 
 # Local-only Jekyll config for previewing without the jupyter CLI
 _config_local.yml
+
+# Claude Code local session config
+.claude/

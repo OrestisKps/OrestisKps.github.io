@@ -24,6 +24,11 @@ $pink-color: #f92080 !default;
 $pink-color-light: #ffdddd !default;
 $yellow-color: #efcc00 !default;
 
+// Muted steel blue -- site accent, replaces al-folio's default magenta/cyan.
+// $purple-color is deliberately left alone: $code-bg-color-light depends on it.
+$steel-color: #2b6c80 !default;
+$steel-color-light: #7fb8c9 !default;
+
 $grey-color: #828282 !default;
 $grey-color-light: color.adjust($grey-color, $lightness: 40%);
 $grey-color-dark: #1c1c1d;
