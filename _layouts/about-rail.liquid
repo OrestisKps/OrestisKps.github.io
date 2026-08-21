@@ -3,9 +3,12 @@ layout: default
 ---
 
 {% comment %}
-  Two-column homepage: identity rail + numbered content column (design 1c).
+  Two-column homepage: identity rail + content column (design 1c, trimmed).
   Styles live in _sass/_rail.scss. All colours come from --global-* variables
   so the light/dark toggle keeps working.
+
+  The rail carries no page nav: the navbar in _includes/header.liquid is the
+  single source of navigation, so the links are not duplicated here.
 {% endcomment %}
 
 <div class="rail-page">
@@ -39,61 +42,51 @@ layout: default
     <hr class="rail-rule">
 
     {% comment %}
-      Mirrors the navbar in _includes/header.liquid: same nav/nav_order
-      filtering, and the same cv_pdf special case that links straight to the
-      PDF in a new tab. Keeping the logic identical means the rail and the
-      navbar can never disagree about what exists.
-    {% endcomment %}
-    <nav class="rail-nav">
-      {%- assign sorted_pages = site.pages | sort: 'nav_order' -%}
-      {%- for p in sorted_pages -%}
-        {%- if p.nav and p.url != page.url -%}
-          {%- if p.cv_pdf -%}
-            {%- assign nav_url = p.cv_pdf -%}
-          {%- elsif p.permalink contains '://' -%}
-            {%- assign nav_url = p.permalink -%}
-          {%- else -%}
-            {%- assign nav_url = p.url -%}
-          {%- endif -%}
-          <a
-            href="{{ nav_url | relative_url }}"
-            {% if p.cv_pdf %}target="_blank" rel="noopener"{% endif %}
-          >
-            {%- if p.title == 'CV' -%}CV{%- else -%}{{ p.title | capitalize }}{%- endif -%}
-          </a>
-        {%- endif -%}
-      {%- endfor -%}
-    </nav>
-
-    <hr class="rail-rule">
-
-    {% comment %}
-      Text links rather than al-folio's icon row, read straight from
-      _data/socials.yml so there is a single source of truth.
+      Icon links, read from _data/socials.yml so there is a single source of
+      truth. Font Awesome covers email and LinkedIn; Academicons covers Google
+      Scholar and ORCID. Both stylesheets are already loaded in head.liquid.
+      Each icon carries an aria-label and a title, since the glyph alone is
+      not accessible.
     {% endcomment %}
     {% if page.social %}
-      <div class="rail-contact">
+      <div class="rail-social">
         {% if site.data.socials.email %}
-          <a href="mailto:{{ site.data.socials.email }}">{{ site.data.socials.email }}</a>
+          <a href="mailto:{{ site.data.socials.email }}" title="Email" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
         {% endif %}
         {% if site.data.socials.scholar_userid %}
           <a
             href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}"
             target="_blank"
             rel="noopener"
-            >Google Scholar</a
+            title="Google Scholar"
+            aria-label="Google Scholar"
           >
+            <i class="ai ai-google-scholar"></i>
+          </a>
         {% endif %}
         {% if site.data.socials.orcid_id %}
-          <a href="https://orcid.org/{{ site.data.socials.orcid_id }}" target="_blank" rel="noopener">ORCID</a>
+          <a
+            href="https://orcid.org/{{ site.data.socials.orcid_id }}"
+            target="_blank"
+            rel="noopener"
+            title="ORCID"
+            aria-label="ORCID"
+          >
+            <i class="ai ai-orcid"></i>
+          </a>
         {% endif %}
         {% if site.data.socials.linkedin_username %}
           <a
             href="https://www.linkedin.com/in/{{ site.data.socials.linkedin_username }}"
             target="_blank"
             rel="noopener"
-            >LinkedIn</a
+            title="LinkedIn"
+            aria-label="LinkedIn"
           >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
         {% endif %}
       </div>
     {% endif %}
@@ -104,34 +97,6 @@ layout: default
   </aside>
 
   <main class="rail-content">
-    <section class="rail-section">
-      <div class="rail-eyebrow">01 &mdash; About</div>
-      {{ content }}
-    </section>
-
-    {% comment %}
-      Publications are driven from _bibliography/papers.bib via jekyll-scholar,
-      using the same queries as _pages/publications.md so the two can never
-      drift apart. The .publications class is required: everything in
-      _sass/_publications.scss is nested under it.
-    {% endcomment %}
-    {% if page.selected_papers %}
-      <section class="rail-section">
-        <div class="rail-eyebrow">02 &mdash; Publications</div>
-
-        <div class="publications rail-publications">
-          <h2 class="bibliography">Refereed Research Articles</h2>
-          {% bibliography --group_by none --query @*[keywords=refereed]* %}
-        </div>
-
-        <a class="rail-more" href="{{ '/publications/' | relative_url }}">All publications &rarr;</a>
-      </section>
-    {% endif %}
-
-    {% comment %}
-      Section 03 Teaching is deliberately absent: _pages/teaching.md still reads
-      "Content coming soon", and the design bundle's course blocks were invented
-      placeholders. Add it here as a .rail-section once real courses exist.
-    {% endcomment %}
+    <section class="rail-section">{{ content }}</section>
   </main>
 </div>

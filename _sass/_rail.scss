@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Homepage identity rail (design direction 1c)
  *
- * Two-column homepage: a fixed identity rail on the left, a numbered content
- * column on the right. Used only by _layouts/about-rail.liquid.
+ * Two-column homepage: a fixed identity rail on the left, intro copy on the
+ * right. Used only by _layouts/about-rail.liquid.
  *
  * Every colour comes from a --global-* custom property so the light/dark
  * toggle keeps working. Do not introduce colour literals here.
@@ -94,37 +94,32 @@ $rail-breakpoint: 768px;
   background: var(--global-divider-color);
 }
 
-.rail-nav {
+/*
+ * Contact icons, laid out horizontally. Font Awesome supplies email and
+ * LinkedIn, Academicons supplies Google Scholar and ORCID.
+ */
+.rail-social {
   display: flex;
-  flex-direction: column;
-  gap: 11px;
-  font-size: 14px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+  font-size: 20px;
+  line-height: 1;
 
   a {
-    color: var(--global-text-color);
+    color: var(--global-text-color-light);
     text-decoration: none;
+    transition: color 0.2s ease-in-out;
 
     &:hover {
       color: var(--global-theme-color);
       text-decoration: none;
     }
   }
-}
 
-.rail-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-size: 13px;
-  overflow-wrap: anywhere; /* long email / ORCID must not overflow the rail */
-
-  a {
-    color: var(--global-theme-color);
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
+  i {
+    display: block; /* kill the inline-baseline gap so icons align */
   }
 }
 
@@ -160,15 +155,6 @@ $rail-breakpoint: 768px;
   gap: 20px;
 }
 
-.rail-eyebrow {
-  font-family: v.$font-mono;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--global-text-color-light);
-}
-
 .rail-content p {
   max-width: 64ch;
   margin: 0;
@@ -186,48 +172,12 @@ $rail-breakpoint: 768px;
   color: var(--global-text-color);
 }
 
-.rail-more {
-  align-self: flex-end;
-  font-size: 14px;
+/* Links inside the intro copy (interviews, CeDEx, NIBS). */
+.rail-content a {
   color: var(--global-theme-color);
-}
 
-/*
- * Publications reuse _publications.scss wholesale so the homepage list and
- * /publications/ stay visually identical. Only spacing is adjusted here.
- */
-.rail-content .rail-publications {
-  ol.bibliography {
-    margin: 0;
-    padding: 0;
-
-    li {
-      margin-bottom: 24px;
-    }
-  }
-
-  h2.bibliography {
-    margin-top: 0;
-  }
-
-  /*
-   * Hide the journal cover thumbnails on the homepage only.
-   *
-   * bib.liquid puts them in a .col-sm-2, which is ~150px wide on
-   * /publications/ but only ~74px inside this narrower rail column -- too
-   * small to read a cover with text on it. The design spec for section 02
-   * lists no thumbnail either. /publications/ is untouched and keeps them.
-   *
-   * That column holds only the preview here: no entry in papers.bib sets
-   * `abbr`, so no venue badge is lost by hiding it. If abbr fields are ever
-   * added, hide `.preview` alone instead of the whole column.
-   */
-  ol.bibliography li .col-sm-2.abbr {
-    display: none;
-  }
-
-  ol.bibliography li .col-sm-8 {
-    flex: 0 0 100%;
-    max-width: 100%;
+  &:hover {
+    text-decoration: underline;
   }
 }
+
