@@ -29,6 +29,11 @@ $yellow-color: #efcc00 !default;
 $steel-color: #2b6c80 !default;
 $steel-color-light: #7fb8c9 !default;
 
+// Font stacks. Faces are declared in _fonts.scss (self-hosted).
+$font-sans: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !default;
+$font-serif: "Newsreader", Georgia, "Times New Roman", serif !default;
+$font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !default;
+
 $grey-color: #828282 !default;
 $grey-color-light: color.adjust($grey-color, $lightness: 40%);
 $grey-color-dark: #1c1c1d;
