@@ -184,6 +184,8 @@ kramdown:
 # Includes & excludes
 include: ["_pages", "_scripts"]
 exclude:
+  - "Website design improvement/"
+  - "Website design improvement.zip"
   - bin/
   - CONTRIBUTING.md
   - CUSTOMIZE.md
