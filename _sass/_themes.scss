@@ -9,7 +9,7 @@
   --global-bg-color: #{v.$white-color};
   --global-code-bg-color: #{v.$code-bg-color-light};
   --global-text-color: #{v.$black-color};
-  --global-text-color-light: #{v.$grey-color};
+  --global-text-color-light: #{v.$grey-color-secondary-light};
   --global-theme-color: #{v.$steel-color};
   --global-hover-color: #{v.$steel-color};
   --global-hover-text-color: #{v.$white-color};
@@ -80,7 +80,7 @@ html[data-theme="dark"] {
   --global-bg-color: #{v.$grey-color-dark};
   --global-code-bg-color: #{v.$code-bg-color-dark};
   --global-text-color: #{v.$grey-color-light};
-  --global-text-color-light: #{v.$grey-color};
+  --global-text-color-light: #{v.$grey-color-secondary-dark};
   --global-theme-color: #{v.$steel-color-light};
   --global-hover-color: #{v.$steel-color-light};
   --global-hover-text-color: #{v.$white-color};

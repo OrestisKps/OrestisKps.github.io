@@ -23,7 +23,8 @@
     }
   }
 
-  h2.bibliography {
+  h2.bibliography,
+  h3.bibliography {
     color: var(--global-divider-color);
     border-top: 1px solid var(--global-divider-color);
     padding-top: 1rem;
@@ -31,7 +32,8 @@
     text-align: right;
   }
 
-  h3.bibliography-subheading {
+  h3.bibliography-subheading,
+  h4.bibliography-subheading {
     color: var(--global-text-color-light);
     font-size: 1.1rem;
     font-weight: bold;

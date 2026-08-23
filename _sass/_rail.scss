@@ -12,6 +12,8 @@
 
 $rail-width: 340px;
 $rail-breakpoint: 768px;
+/* Clearance for the fixed navbar, used by the sticky rail and scroll anchors. */
+$sticky-offset: 80px;
 
 .rail-page {
   display: grid;
@@ -27,10 +29,7 @@ $rail-breakpoint: 768px;
 /* ---------- Left rail ---------- */
 
 .rail {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  align-self: stretch;
+  align-self: stretch; /* background and border span the full page height */
   padding: 56px 40px;
   background: var(--global-rail-bg-color);
   border-right: 1px solid var(--global-divider-color);
@@ -39,6 +38,19 @@ $rail-breakpoint: 768px;
     padding: 40px 24px;
     border-right: none;
     border-bottom: 1px solid var(--global-divider-color);
+  }
+
+  /* The identity block follows the reader down the page. */
+  .rail-inner {
+    position: sticky;
+    top: $sticky-offset;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+    @media (max-width: $rail-breakpoint) {
+      position: static;
+    }
   }
 
   /* figure.liquid wraps the photo in <figure><picture>; strip the defaults. */
@@ -140,12 +152,6 @@ $rail-breakpoint: 768px;
   }
 }
 
-.rail-section {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
 .rail-content p {
   max-width: 64ch;
   margin: 0;
@@ -174,3 +180,80 @@ $rail-breakpoint: 768px;
   }
 }
 
+
+/* ---------- Single-page sections ---------- */
+
+/* Anchor targets clear the fixed navbar when the nav scrolls to them. */
+/*
+ * Spacing between sections comes from .rail-content's flex gap. Within a
+ * section, the column gap spaces the paragraphs, since .rail-content p is
+ * margin-less.
+ */
+.page-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  scroll-margin-top: $sticky-offset;
+}
+
+.section-heading {
+  margin: 0; /* the section's flex gap supplies the space below */
+  font-family: v.$font-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--global-text-color);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+/* ---------- Teaching ---------- */
+
+.courses {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.course {
+  align-items: center;
+
+  /* figure.liquid wraps the cover in <figure><picture>; strip the defaults. */
+  figure,
+  picture {
+    display: block;
+    margin: 0;
+  }
+
+  .course-cover img {
+    width: 100%;
+    height: auto;
+  }
+
+  .course-title {
+    font-size: 16px;
+    font-weight: bolder;
+    line-height: 1.4;
+    color: var(--global-text-color);
+  }
+
+  .course-meta {
+    margin-top: 4px;
+    font-size: 14px;
+    color: var(--global-text-color-light);
+  }
+}
+
+/* ---------- Scroll behaviour ---------- */
+
+/* Smooth scrolling for the navbar's homepage section anchors. */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

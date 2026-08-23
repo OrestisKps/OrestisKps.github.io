@@ -13,6 +13,11 @@ layout: default
 
 <div class="rail-page">
   <aside class="rail">
+    {% comment %}
+      .rail keeps the full-height background and border; .rail-inner is the
+      part that sticks while the content column scrolls.
+    {% endcomment %}
+    <div class="rail-inner">
     {% if page.profile.image %}
       {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
       {%
@@ -98,10 +103,8 @@ layout: default
         {% endif %}
       </div>
     {% endif %}
-
+    </div>
   </aside>
 
-  <main class="rail-content">
-    <section class="rail-section">{{ content }}</section>
-  </main>
+  <main class="rail-content">{{ content }}</main>
 </div>

@@ -35,6 +35,13 @@ $font-serif: "Newsreader", Georgia, "Times New Roman", serif !default;
 $font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !default;
 
 $grey-color: #828282 !default;
+/*
+ * Secondary body text, one value per theme. Stock $grey-color (#828282) is
+ * 3.84:1 on the light background and 4.43:1 on the dark one, both under the
+ * WCAG AA minimum of 4.5:1. These land at 7.0:1 and 7.85:1 respectively.
+ */
+$grey-color-secondary-light: #595959 !default;
+$grey-color-secondary-dark: #b0b0b0 !default;
 $grey-color-light: color.adjust($grey-color, $lightness: 40%);
 $grey-color-dark: #1c1c1d;
 $grey-900: #212529;

@@ -59,6 +59,15 @@ socials_in_search: true
 posts_in_search: true
 bib_search: false
 
+# Sections of the single-page homepage, rendered as scroll anchors in the navbar.
+nav_sections:
+  - title: about
+    anchor: about
+  - title: research
+    anchor: research
+  - title: teaching
+    anchor: teaching
+
 # Dimensions
 max_width: 1080px
 

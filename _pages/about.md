@@ -27,34 +27,70 @@ latest_posts:
   enabled: false
 ---
 
-Behavioral and Experimental Economist
-{: .rail-lead }
+<p class="rail-lead">Behavioral and Experimental Economist</p>
 
+<section id="about" class="page-section" markdown="1">
 
-I am an economist specializing in behavioural and experimental economics. 
-My research focuses on decisions under risk and uncertainty in
-individual and social contexts, with applications to medical decision
-making. Central to this line of work is the *description–experience*
-framework: whether probabilities are described up front or learned
-through experience changes the choices people make, even when the odds
-are identical. My work has helped bring this framework, first
-developed in psychology, into economics (see
-[this interview](https://youtu.be/YrwYHErU0zc?si=Dmm1AwLijwxdTemh) for
-an overview). A second strand asks how individual judgments pool into
-reliable collective assessments, including in matters of subjective
-taste (see
-[this podcast](https://youtu.be/-rFXLK5Ujko?si=0bK_gC3AI1rv3gz5) for
-an informal take on that work). I am also interested in methodological
-challenges of preference elicitation, incentive design and model
-estimation, with the aim of building more accurate and more predictive
-models of economic behaviour. I pursue these questions through
-laboratory, online and field experiments.
+<h2 class="section-heading">About</h2>
 
-Currently, I am an Assistant Professor in the Department of Economics at the
-[University of Crete](https://economics.soc.uoc.gr/). Previously I was
-a postdoctoral researcher at the
-[Technical University of Munich](https://eco.cs.tum.de/en/team/personnel).
-I obtained my PhD in 2019 from the University of Nottingham and remain
-an external fellow of the Centre for Decision Research and
-Experimental Economics
-([CeDEx](https://www.nottingham.ac.uk/cedex/)).
+I am an Assistant Professor in the Department of Economics at the [University of Crete](https://economics.soc.uoc.gr/). Previously I was a postdoctoral researcher at the [Technical University of Munich](https://eco.cs.tum.de/en/team/personnel). I obtained my PhD in 2019 from the University of Nottingham and remain an external fellow of the Centre for Decision Research and Experimental Economics ([CeDEx](https://www.nottingham.ac.uk/cedex/)).
+
+My research asks how people make decisions under risk and uncertainty. In particular, I study how different modes of learning about uncertainty — above all, learning from experience — shape [risky behaviour](https://link.springer.com/article/10.1007/s11166-022-09393-w), [information search](https://link.springer.com/article/10.1007/s11238-017-9623-y), and the [willingness to cooperate](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4256844) in social dilemmas (see [here](https://youtu.be/YrwYHErU0zc?si=Dmm1AwLijwxdTemh) for an interview summarizing this line of work). Searching for information is one half of the problem; pooling it is the other. I study how individual judgments combine into reliable collective assessments [in matters of subjective taste](https://wine-economics.org/wp-content/uploads/2024/12/4-Vol-19-Issue-No-3-Crowdsourcing-the-assessment-of-wine-quality-Vivino-ratings-professional-critics-and-the-weather-by-Kopsacheilis-Analytis-Kaushik-Herzog-Bahrami-and-Deroy.pdf) (see also [here](https://youtu.be/-rFXLK5Ujko?si=0bK_gC3AI1rv3gz5) for a podcast interview).
+
+A separate strand of my work is methodological. It includes studies on [order effects in eliciting preferences](https://docs.iza.org/dp16343.pdf), on whether [real incentives matter](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5013465) for observed choices, and on the reproducibility of the social sciences.
+
+The more applied side of my research concerns medical decision making. In a recent field experiment, co-authors and I test channels for [motivating high-risk groups to vaccinate](https://link.springer.com/epdf/10.1186/s12889-020-8246-3) against seasonal influenza, and examine how subjective risk perceptions shape that decision.
+
+</section>
+
+<section id="research" class="page-section">
+
+<h2 class="section-heading">Research</h2>
+
+<div class="publications">
+
+<h3 class="bibliography">Published Research Articles</h3>
+{% bibliography --group_by none --query @*[keywords=refereed]* %}
+
+<h3 class="bibliography">Consortium Co-Authorship</h3>
+{% bibliography --group_by none --query @*[keywords=consortium]* %}
+
+<h3 class="bibliography">Work in Progress</h3>
+
+<h4 class="bibliography-subheading">Papers in Submission / Under Review</h4>
+{% bibliography --group_by none --query @*[keywords=submission]* %}
+
+<h4 class="bibliography-subheading">Papers in Preparation</h4>
+{% bibliography --group_by none --query @*[keywords=preparation]* %}
+
+</div>
+
+</section>
+
+<section id="teaching" class="page-section">
+
+<h2 class="section-heading">Teaching</h2>
+
+<div class="courses">
+  {% assign courses = site.data.courses %}
+  {% for course in courses %}
+    <div class="row course">
+      <div class="col col-sm-2 course-cover">
+        {%
+          include figure.liquid
+          loading="lazy"
+          path=course.cover
+          sizes="150px"
+          class="preview z-depth-1 rounded"
+          alt=course.cover_alt
+        %}
+      </div>
+      <div class="col-sm-8">
+        <div class="course-title">{{ course.title }} ({{ course.level }})</div>
+        <div class="course-meta">{{ course.term }} &middot; {{ course.institution }}</div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+</section>

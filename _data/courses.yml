@@ -1,0 +1,22 @@
+# Courses taught, rendered in the Teaching section of the homepage.
+# `cover` is a path under assets/img/; `cover_alt` describes the textbook.
+- title: Behavioral Economics
+  level: Undergraduate
+  term: Winter 2026
+  institution: University of Crete
+  cover: assets/img/teaching/Angner.webp
+  cover_alt: "Textbook cover: Angner, A Course in Behavioral Economics"
+
+- title: Experimental Economics
+  level: Undergraduate
+  term: Winter 2026
+  institution: University of Crete
+  cover: assets/img/teaching/Holt.jpg
+  cover_alt: "Textbook cover: Holt, Markets, Games and Strategic Behavior"
+
+- title: Microeconomics
+  level: Undergraduate
+  term: Summer 2026
+  institution: University of Crete
+  cover: assets/img/teaching/Nicholson.png
+  cover_alt: "Textbook cover: Nicholson and Snyder, Microeconomic Theory"
