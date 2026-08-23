@@ -30,10 +30,22 @@ latest_posts:
 Behavioral and Experimental Economist
 {: .rail-lead }
 
-I am an Assistant Professor in the Department of Economics at the [University of Crete](https://economics.soc.uoc.gr/). Previously I was a postdoctoral researcher at the [Technical University of Munich](https://eco.cs.tum.de/en/team/personnel). I obtained my PhD in 2019 from the University of Nottingham and remain an external fellow of the Centre for Decision Research and Experimental Economics ([CeDEx](https://www.nottingham.ac.uk/cedex/)).
+My research focuses on decisions under risk and uncertainty in
+individual and social contexts, with applications to medical decision
+making. Central to this line of work is the *description–experience*
+framework: whether probabilities are described up front or learned
+through experience changes the choices people make, even when the odds
+are identical. My work has helped bring this framework, first
+developed in psychology, into economics (see [this interview][exp] for
+an overview). A second strand asks how individual judgments pool into
+reliable collective assessments, [including in matters of subjective
+taste][wine] ([podcast][pod]). I am also interested in methodological
+challenges of preference elicitation, incentive design and model
+estimation, with the aim of building more accurate and more predictive
+models of economic behaviour. I pursue these questions through
+laboratory, online and field experiments.
 
-My research asks how people make decisions under risk and uncertainty. In particular, I study how different modes of learning about uncertainty — above all, learning from experience — shape [risky behaviour](https://link.springer.com/article/10.1007/s11166-022-09393-w), [information search](https://link.springer.com/article/10.1007/s11238-017-9623-y), and the [willingness to cooperate](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4256844) in social dilemmas (see [here](https://youtu.be/YrwYHErU0zc?si=Dmm1AwLijwxdTemh) for an interview summarizing this line of work). Searching for information is one half of the problem; pooling it is the other. I study how individual judgments combine into reliable collective assessments [in matters of subjective taste](https://wine-economics.org/wp-content/uploads/2024/12/4-Vol-19-Issue-No-3-Crowdsourcing-the-assessment-of-wine-quality-Vivino-ratings-professional-critics-and-the-weather-by-Kopsacheilis-Analytis-Kaushik-Herzog-Bahrami-and-Deroy.pdf) (see also [here](https://youtu.be/-rFXLK5Ujko?si=0bK_gC3AI1rv3gz5) for a podcast interview).
-
-A separate strand of my work is methodological. It includes studies on [order effects in eliciting preferences](https://docs.iza.org/dp16343.pdf), on whether [real incentives matter](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5013465) for observed choices, and on the reproducibility of the social sciences.
-
-The more applied side of my research concerns medical decision making. In a recent field experiment, co-authors and I test channels for [motivating high-risk groups to vaccinate](https://link.springer.com/epdf/10.1186/s12889-020-8246-3) against seasonal influenza, and examine how subjective risk perceptions shape that decision.
+[exp]: https://youtu.be/YrwYHErU0zc?si=Dmm1AwLijwxdTemh
+[pod]: https://youtu.be/-rFXLK5Ujko?si=0bK_gC3AI1rv3gz5
+[wine]:
+https://wine-economics.org/wp-content/uploads/2024/12/4-Vol-19-Issue-No-3-Crowdsourcing-the-assessment-of-wine-quality-Vivino-ratings-professional-critics-and-the-weather-by-Kopsacheilis-Analytis-Kaushik-Herzog-Bahrami-and-Deroy.pdf
