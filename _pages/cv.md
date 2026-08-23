@@ -7,10 +7,10 @@ nav_order: 3
 nav_new_tab: true
 ---
 
-<a href="{{ '/assets/pdf/cv.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Download as PDF</a>
+<a href="{{ '/assets/pdf/CV_202608.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Download as PDF</a>
 
 <iframe
-  src="{{ '/assets/pdf/cv.pdf' | relative_url }}"
+  src="{{ '/assets/pdf/CV_202608.pdf' | relative_url }}"
   title="Curriculum Vitae"
   width="100%"
   height="1000px"
