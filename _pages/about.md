@@ -30,15 +30,8 @@ latest_posts:
 Behavioral and Experimental Economist
 {: .rail-lead }
 
-I am an Assistant Professor in the Department of Economics at the
-[University of Crete](https://economics.soc.uoc.gr/). Previously I was
-a postdoctoral researcher at the
-[Technical University of Munich](https://eco.cs.tum.de/en/team/personnel).
-I obtained my PhD in 2019 from the University of Nottingham and remain
-an external fellow of the Centre for Decision Research and
-Experimental Economics
-([CeDEx](https://www.nottingham.ac.uk/cedex/)).
 
+I am an economist specializing in behavioural and experimental economics. 
 My research focuses on decisions under risk and uncertainty in
 individual and social contexts, with applications to medical decision
 making. Central to this line of work is the *description–experience*
@@ -56,3 +49,12 @@ challenges of preference elicitation, incentive design and model
 estimation, with the aim of building more accurate and more predictive
 models of economic behaviour. I pursue these questions through
 laboratory, online and field experiments.
+
+Currently, I am an Assistant Professor in the Department of Economics at the
+[University of Crete](https://economics.soc.uoc.gr/). Previously I was
+a postdoctoral researcher at the
+[Technical University of Munich](https://eco.cs.tum.de/en/team/personnel).
+I obtained my PhD in 2019 from the University of Nottingham and remain
+an external fellow of the Centre for Decision Research and
+Experimental Economics
+([CeDEx](https://www.nottingham.ac.uk/cedex/)).
