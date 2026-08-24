@@ -188,3 +188,27 @@
     color: var(--global-hover-color);
   }
 }
+
+/*******************************************************************************
+ * Collapsed (hamburger) menu layout
+ *
+ * The navbar is .navbar-expand-sm, so Bootstrap only sets
+ * `.navbar-nav { flex-direction: row }` above 576px; below that the links fall
+ * back to a vertical stack. Lay them out as a wrapping row instead, without
+ * touching the collapse/expand behaviour itself.
+ ******************************************************************************/
+
+@media (max-width: 575.98px) {
+  .navbar-collapse .navbar-nav {
+    flex-direction: row;
+    flex-wrap: wrap !important; /* the markup carries Bootstrap's .flex-nowrap, which is !important */
+    justify-content: flex-end; /* the collapse is .text-right; keep the links on that edge */
+
+    /*
+     * Bootstrap zeroes .navbar-nav .nav-link's horizontal padding for the
+     * stacked layout, so in a row the links would otherwise touch. The row gap
+     * keeps wrapped lines from crowding each other.
+     */
+    gap: 0.25rem 1.25rem;
+  }
+}
