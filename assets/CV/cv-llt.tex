@@ -1,0 +1,161 @@
+%%%%%%%%%%%%%%%
+% This CV example/template is based on my own
+% CV which I (lamely attempted) to clean up, so that
+% it's less of an eyesore and easier for others to use.
+%
+% LianTze Lim (liantze@gmail.com)
+% 13 May, 2020
+%
+\documentclass[a4paper,skipsamekey,11pt,english]{curve}
+
+% Uncomment to enable Chinese; needs XeLaTeX
+% \usepackage{ctex}
+\makeatletter
+\renewenvironment{rubric}[1]{%
+    \def\raggedright{%
+        \@rightskip\@flushglue\rightskip\@rightskip\leftskip\z@skip}%
+    \def\raggedleft{%
+        \rightskip\z@skip\leftskip\@flushglue\parfillskip\z@skip}%
+    \gdef\@beforespace{0pt}%
+    \gdef\@nextentry{}%
+    \gdef\@previouskey{}%
+    \global\let\old@newpage\newpage%
+    \global\let\old@pagebreak\pagebreak%
+    \global\let\old@nopagebreak\nopagebreak
+    \begin{longtable}{@{}kl@{~}X@{}}
+        \@rubrichead{#1}\\*[\rubricspace]
+        \endfirsthead
+        \noalign{\@rubricmark{#1}%
+            \global\let\in@newpage\newpage%
+            \global\let\in@pagebreak\pagebreak%
+            \global\let\in@nopagebreak\nopagebreak%
+            \gdef\newpage{\@nextentry\noalign{\gdef\@nextentry{}}\in@newpage}
+            \gdef\pagebreak{\@nextentry\noalign{\gdef\@nextentry{}}\in@pagebreak}
+            \gdef\nopagebreak{\@nextentry\noalign{\gdef\@nextentry{}}\in@nopagebreak}}}{%
+        \@nextentry
+    \end{longtable}\par\vspace\rubricafterspace
+    \global\let\newpage\old@newpage%
+    \global\let\pagebreak\old@pagebreak%
+    \global\let\nopagebreak\old@nopagebreak}
+\makeatother
+
+\usepackage{settings}
+
+% Change the fonts if you want
+\ifxetexorluatex % If you're using XeLaTeX or LuaLaTeX
+  \usepackage{fontspec} 
+  %% You can use \setmainfont etc; I'm just using these font packages here because they provide OpenType fonts for use by XeLaTeX/LuaLaTeX anyway
+  \usepackage[p,osf,swashQ]{cochineal}
+  \usepackage[medium,bold]{cabin}
+  \usepackage[varqu,varl,scale=0.9]{zi4}
+\else % If you're using pdfLaTeX or latex
+  \usepackage[T1]{fontenc}
+  \usepackage[p,osf,swashQ]{cochineal}
+  \usepackage{cabin}
+  \usepackage{hyperref}
+  \usepackage{ragged2e}
+
+  \usepackage[varqu,varl,scale=0.9]{zi4}
+\fi
+
+%% Only needed if you want a Publication List
+\addbibresource{own-bib.bib}
+
+%% Specify your last name and first name (as given in the .bib) to automatically bold your own name in the publications list. One caveat: You need to write \bibnamedelima where there's a space in your name for this to work properly for now...
+\myname{Kopsacheilis}{Orestis}
+
+% Change the page margins if you want
+% \geometry{left=1cm,right=1cm,top=1.5cm,bottom=1.5cm}
+
+% Change the colours if you want
+% \definecolor{SwishLineColour}{HTML}{00FFFF}
+% \definecolor{MarkerColour}{HTML}{0000CC}
+
+% Change the item prefix marker if you want
+% \prefixmarker{$\diamond$}
+
+%% Photo is only shown if "fullonly" is included
+%\includecomment{fullonly}
+ \excludecomment{fullonly}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\leftheader{%
+  {\LARGE DR. \textsc{ORESTIS KOPSACHEILIS}}
+  
+\begin{tabularx}{\textwidth}{@{}X X@{}}
+Department of Economics,\par
+University of Crete,\par
+Gallos Campus, 74150 Rethymno, Greece\par
+&
+{\faEnvelope[regular]}{\texttt{orestis.kopsacheilis@uoc.gr}}\par
+{\faGlobe}{\url{https://orestiskps.github.io/}}\par
+%{\faIdBadge}{\url{https://orcid.org/0000-0000-0000-0000}}\par
+{\faGraduationCap}{\href{https://scholar.google.com/citations?user=T42U71UAAAAJ}{Google Scholar}}\par
+ %{\faTwitter}{\texttt{@Orestis\_Kps}}\par
+\end{tabularx}    
+    
+
+}
+
+\rightheader{~}
+\begin{fullonly}
+\photo[r]{photo}
+\photoscale{0.13}
+\end{fullonly}
+
+\geometry{includefoot}
+
+\makeatletter
+\renewcommand{\@evenfoot}{\hfill\thepage\hfill}
+\renewcommand{\@oddfoot}{\hfill\thepage\hfill}
+\makeatother
+
+\title{Curriculum Vitae}
+
+\begin{document}
+\makeheaders[c]
+
+\makerubric{employment}
+
+%% Research Interests is now switched on: as a faculty member this
+%% frames the rest of the CV for readers outside your subfield.
+\input{interest}
+
+\makerubric{education}
+
+% If you're not a researcher nor an academic, you probably don't have any publications; delete this line.
+%% Sometimes when a section can't be nicely modelled with the \entry[]... mechanism; hack our own and use \input NOT \makerubric
+%\input{publications}
+
+\makerubric{publicationsNew}
+
+\makerubric{workinprogress}
+
+\makerubric{awards}
+
+%\pagebreak
+
+\makerubric{teaching}
+%\makerubric{affiliations}
+\makerubric{conferences}
+
+\makerubric{misc}
+\makerubric{skills}
+
+%\newpage
+%\pagebreak
+%\input{refereeFull}
+
+%\makerubric{referee-full}
+
+
+% \input{referee-full}
+
+\vspace{1cm} 
+
+Rethymno, \today
+
+\end{document}

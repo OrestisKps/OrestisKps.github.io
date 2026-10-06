@@ -11,7 +11,7 @@ nav_new_tab: true
   <a
     class="btn btn-sm z-depth-0"
     role="button"
-    href="{{ '/assets/pdf/CV_202608.pdf' | relative_url }}"
+    href="{{ '/assets/pdf/CV.pdf' | relative_url }}"
     target="_blank"
     rel="noopener noreferrer"
     style="border: 1px solid var(--global-theme-color); color: var(--global-theme-color);"
@@ -21,7 +21,7 @@ nav_new_tab: true
 <!-- Phone browsers show embedded PDFs poorly or not at all, so the embed is for medium screens and up. -->
 <iframe
   class="d-none d-md-block"
-  src="{{ '/assets/pdf/CV_202608.pdf' | relative_url }}"
+  src="{{ '/assets/pdf/CV.pdf' | relative_url }}"
   title="Curriculum Vitae"
   width="100%"
   style="height: 85vh; border: 1px solid var(--global-divider-color);"
