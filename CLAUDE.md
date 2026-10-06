@@ -9,7 +9,7 @@ Live at https://orestiskps.github.io. Built with Jekyll on a trimmed-down copy o
 - Only pushes touching `assets/**`, `_sass/**`, `_scripts/**`, `*.bib`, `*.html`, `*.js`, `*.liquid`, `*.md`, `*.yml` or the Gemfile trigger a deploy.
 - A failed build leaves the old site online. Check the run on GitHub (Actions tab) after pushing.
 - **Ruby, Bundler and `gh` are not installed on this machine**, so the site cannot be built or previewed locally. `.claude/launch.json` has a `jekyll serve` config for when Ruby is installed. Until then, keep changes small and verify the live site after each deploy.
-- Remote is `git@github.com:OrestisKps/OrestisKps.github.io.git` (SSH). As of 2026-10-06 this machine has no SSH key for GitHub, so `git push` from here fails; the owner pushes.
+- Remote is `https://github.com/OrestisKps/OrestisKps.github.io.git`. Pushes authenticate through Git Credential Manager (sign-in stored since 2026-10-06), so `git push` works from this machine; use `GCM_INTERACTIVE=never` so a lost login fails instead of hanging.
 - Deploy status can be read without `gh`: `curl -s "https://api.github.com/repos/OrestisKps/OrestisKps.github.io/actions/runs?per_page=3"`.
 - The repo lives in a Google Drive–synced folder. Avoid running git on it from two machines at once.
 - Only commit or push when the owner asks. Draft changes (e.g. a new CV PDF) may sit uncommitted until they say "ship it".
@@ -41,14 +41,18 @@ Unused al-folio leftovers were moved to `_archive/` (paths mirror their old loca
 - LaTeX source: `assets/CV/` (main file `cv-llt.tex`; sections in `employment.tex`, `education.tex`, `skills.tex`, etc.; styling in `settings.sty`). It is excluded from the Jekyll build in `_config.yml`, so the source is never published.
 - Build with **pdfLaTeX** (not XeLaTeX), outside the repo so no build junk lands in it:
   ```bash
-  cd assets/CV && latexmk -pdf -f -interaction=nonstopmode -outdir="$TMP/cvbuild" cv-llt.tex
+  cd assets/CV && latexmk -pdf -interaction=nonstopmode -outdir="$TMP/cvbuild" cv-llt.tex
   ```
-  `-f` is needed: the source logs about 170 pre-existing LaTeX errors (an undefined `lightblue` colour in `settings.sty` and `\or` errors in the rubric environment), but the PDF comes out correct. Check the output visually after every build.
+  The build is error-free; treat any LaTeX error as a real problem. Check the output visually after every build.
 - The published PDF is `assets/pdf/CV.pdf`. To update the online CV, copy the build output there and commit it. `_pages/cv.md` must point at that file. The previous dated copy, `CV_202608.pdf`, is in `_archive/`.
 - The date line at the end of the CV uses `\today`, so it changes with every rebuild.
 
 ## Conventions
 
 - Commit messages: imperative, describe the effect (see `git log`).
+- Body text (About paragraphs and bullets, publication entries) is 15px in `--global-text-color-light`, with the owner's name in author lists at weight 500, no underline. The theme colours `div`/`li`/`em`/`strong`/`span` explicitly, so colour must be set on those elements, not inherited (`_sass/_rail.scss`, `_sass/_publications.scss`).
+- Favicon: `assets/img/favicon.svg` (main) and `favicon.ico` (fallback), set by `icon` / `icon_fallback` in `_config.yml`. They are simplified versions of the owner's spiral-of-questions logo.
+- **Never commit the full-size logo.** The original (`spiral-of-questions-logo.png`) lives outside the repo in `Documents/Logos/` on purpose, so the high-resolution file never becomes public. Only the small favicon versions are published.
+- `LICENSE` reserves all rights to the personal content (text, CV, photos, logo) and applies MIT only to the al-folio theme code. Keep that split if the file is edited.
 - Keep British spelling in site and CV text ("behavioural", "organiser").
 - Before deleting theme leftovers, check references with `git grep` (layouts via `layout:`, includes via `include`, JS via `_includes/scripts.liquid`, feature flags in `_config.yml`). Plain `grep -r` over this G: drive is very slow; prefer `git grep`.
