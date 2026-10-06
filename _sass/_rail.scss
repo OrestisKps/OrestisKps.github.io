@@ -162,6 +162,29 @@ $sticky-offset: 80px;
   hyphens: auto; /* keeps justified lines from opening up on narrow columns */
 }
 
+/* Bullet lists in the intro copy read like the paragraphs around them. */
+.rail-content .page-section > ul {
+  max-width: 64ch;
+  margin: 0;
+  padding-left: 1.25em;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--global-text-color-light);
+  text-align: justify;
+  hyphens: auto;
+
+  /* The theme colours every li/strong/em explicitly, so set them here too. */
+  li,
+  em {
+    color: var(--global-text-color-light);
+  }
+
+  strong {
+    color: var(--global-text-color-light);
+    font-weight: 500;
+  }
+}
+
 .rail-content p.rail-lead {
   max-width: none;
   font-family: v.$font-serif;

@@ -15,7 +15,8 @@ footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: behavioural economics, experimental economics, decisions under risk and uncertainty, description-experience gap, preference elicitation, Orestis Kopsacheilis, University of Crete
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: favicon.png # an emoji, or an image file name in /assets/img/
+icon: favicon.svg # an emoji, or an image file name in /assets/img/
+icon_fallback: favicon.ico # used by browsers without SVG favicon support
 
 url: "https://OrestisKps.github.io" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/. Leave blank for root

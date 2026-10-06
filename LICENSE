@@ -1,3 +1,24 @@
+This repository contains two kinds of material under different terms.
+
+1. Personal content: all rights reserved
+
+Copyright (c) 2026 Orestis Kopsacheilis. All rights reserved.
+
+The text of the site, the CV (PDF and LaTeX source), photographs, the
+spiral-of-questions logo and favicon (assets/img/favicon.svg,
+assets/img/favicon.ico) and other original images are the personal work of
+Orestis Kopsacheilis. They are NOT covered by the MIT License below and may not
+be copied, modified or reused without prior written permission.
+
+Third-party material, such as journal cover thumbnails, belongs to its
+respective owners and is not covered by the MIT License either.
+
+2. Website theme code: MIT License
+
+The site's code (layouts, includes, styles, scripts and configuration) is based
+on the al-folio theme (https://github.com/alshedivat/al-folio) and is
+distributed under the following license:
+
 The MIT License (MIT)
 
 Copyright (c) 2025 Maruan Al-Shedivat.

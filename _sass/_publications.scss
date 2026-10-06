@@ -60,6 +60,16 @@
 
     li {
       margin-bottom: 1rem;
+      font-size: 15px; /* same size and colour as the About paragraphs */
+
+      /* The theme colours every div/em/span explicitly, so colour each part. */
+      .title,
+      .author,
+      .author > em,
+      .periodical,
+      .periodical em {
+        color: var(--global-text-color-light);
+      }
 
       .preview {
         display: inline-block;
@@ -104,9 +114,8 @@
         }
 
         > em {
-          border-bottom: 1px solid;
           font-style: normal;
-          font-weight: bold;
+          font-weight: 500;
         }
 
         > span.more-authors {
