@@ -10,7 +10,6 @@ _site
 .venv
 assets/libs/
 assets/rendercv/rendercv_output/*.typ
-Gemfile.lock
 node_modules/
 vendor
 
@@ -19,3 +18,16 @@ _config_local.yml
 
 # Claude Code local session config
 .claude/
+
+# LaTeX build output for the CV source
+assets/CV/*.aux
+assets/CV/*.bbl
+assets/CV/*.bcf
+assets/CV/*.blg
+assets/CV/*.fdb_latexmk
+assets/CV/*.fls
+assets/CV/*.log
+assets/CV/*.out
+assets/CV/*.run.xml
+assets/CV/*.synctex.gz
+assets/CV/*.pdf
